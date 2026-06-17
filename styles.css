@@ -1,0 +1,664 @@
+/* Import Google Sans from a reliable open-source CDN */
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+
+/* CSS Variables for Theme */
+:root {
+    --bg-color: #242424;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --equation-color: #d49b9b;
+    --accent-orange: #d97736;
+    --accent-red: #c44949;
+    --accent-yellow: #f4c05f;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Google Sans', 'Product Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Header / Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-equation {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: var(--equation-color);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--text-secondary);
+}
+
+.dropdown-arrow {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    margin-left: 2px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-icons a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-primary);
+    transition: fill 0.2s;
+}
+
+.nav-icons svg:hover {
+    fill: var(--text-secondary);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+    padding: 0 5%;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 2px solid #333;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.hero .subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 5rem;
+}
+
+.social-icons svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-secondary);
+    transition: fill 0.2s ease;
+}
+
+.social-icons a:hover svg {
+    fill: var(--text-primary);
+}
+
+/* --- Wave Animation --- */
+.animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    margin: 0 auto 6rem auto;
+}
+
+.wave-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animating dots exactly along the SVG paths using offset-path */
+.dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.dot-yellow {
+    background-color: var(--accent-yellow);
+    /* Path matches wave1 */
+    offset-path: path("M0 50 Q37.5 0 75 50 T150 50 T225 50 T300 50 T375 50 T450 50 T525 50 T600 50");
+    animation: moveDot 4s linear infinite;
+}
+
+.dot-red {
+    background-color: var(--accent-red);
+    /* Path matches wave2 */
+    offset-path: path("M0 50 Q37.5 100 75 50 T150 50 T225 50 T300 50 T375 50 T450 50 T525 50 T600 50");
+    animation: moveDot 4s linear infinite reverse; /* Reversed to match intersection */
+}
+
+@keyframes moveDot {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* --- Recent Posts --- */
+.recent-posts {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.recent-posts h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.post {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
+}
+
+/* Simulating the hexagon background thumbnail natively in CSS */
+.thumbnail-placeholder {
+    width: 280px;
+    height: 160px;
+    flex-shrink: 0;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    background-image: radial-gradient(circle at 30% 50%, rgba(217, 119, 54, 0.1) 0%, transparent 40%),
+                      radial-gradient(circle at 70% 30%, rgba(196, 73, 73, 0.15) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    line-height: 1.3;
+}
+
+.post-content h3:hover {
+    text-decoration: underline;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dot-separator {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+/* --- Footer --- */
+footer {
+    max-width: 850px;
+    margin: 4rem auto 2rem auto;
+    padding: 2rem 5% 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+#scrollToTop {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+#scrollToTop svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-secondary);
+    transition: fill 0.2s;
+}
+
+#scrollToTop:hover svg {
+    fill: var(--text-primary);
+}
+
+/* --- Responsive Design (Mobile/Tablet) --- */
+@media screen and (max-width: 850px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    nav {
+        display: none; /* Hidden by default on mobile */
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1.5rem;
+        order: 3;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .post {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .thumbnail-placeholder {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.75rem; 
+}
+
+/* --- Header Subscribe Button --- */
+.header-subscribe {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--text-secondary); /* Light gray to blend with the theme */
+    transition: color 0.2s ease;
+}
+
+.header-subscribe:hover {
+    color: var(--accent-orange); /* Highlights orange when hovered */
+}
+
+.rss-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Ensures the icon changes color with the text */
+}
+
+.subscribe-text {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+
+
+/* --- Footer Copyright Alignment --- */
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Space between the icon and the year */
+}
+
+.cc-icon {
+    width: 1.1em; /* Scales perfectly with the surrounding font size */
+    height: 1.1em;
+    fill: currentColor; /* Inherits the text color of the footer automatically */
+    margin-top: -2px; /* Slight visual tweak to center it with numbers perfectly */
+}
+
+.cc-small-badge {
+    width: 80px; /* Adjust this value to make the badge larger or smaller */
+    height: auto;
+}
+
+
+/* --- Footer License Text --- */
+.license-text {
+    font-size: 1rem;       /* Makes the text smaller */
+    width: 50px;         /* Forces the text to wrap onto a second line */
+    flex-shrink: 0;
+    text-align: right;        /* Aligns the wrapped text flush against the badge */
+    line-height: 1.3;         /* Tightens the space between the wrapped lines */
+    color: var(--text-secondary); /* Keeps the subtle gray color */
+}
+
+/* Ensure the container is still aligning them properly */
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+
+/* --- Blog Archive Page Layout --- */
+.blog-archive-container {
+    max-width: 850px;
+    margin: 4rem auto 6rem auto;
+    padding: 0 5%;
+}
+
+.page-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.5px;
+}
+
+.year-group {
+    margin-bottom: 4rem;
+}
+
+.year-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- Dropdown Menu Overlay --- */
+.dropdown-parent {
+    position: relative; /* Acts as the anchor point */
+    display: flex; 
+    align-items: center; 
+    height: 100%; 
+    cursor: pointer; 
+}
+
+.dropdown-parent > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 4px; /* Adds a clean space between the text and the arrow */
+    z-index: 10; 
+}
+
+.dropdown-menu {
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    
+    /* Removed margin-top to prevent the dead-zone */
+    
+    background-color: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    min-width: 220px;
+    padding: 0.5rem 0;
+    
+    display: flex; 
+    flex-direction: column;
+    z-index: 9999; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7); 
+
+    /* The Graceful Fade & Delay */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px); /* Pushes it down visually instead of using margin */
+    transition: visibility 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: 0.25s; /* Wait 0.25s before disappearing */
+}
+
+/* The Invisible Bridge: This spans the visual gap so your mouse never leaves the hover zone */
+.dropdown-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: transparent; /* Completely invisible */
+}
+
+/* Reveal the menu on hover */
+.dropdown-parent:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(8px); /* Keeps a nice 8px gap visually */
+    transition-delay: 0s; /* Appears instantly */
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--accent-orange);
+}
+
+/* Rotate the SVG arrow */
+.dropdown-parent:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+}
+
+/* --- Light Mode Theme --- */
+
+/* Smooth fade when swapping themes */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Overrides variables when the body has the light-theme class */
+body.light-theme {
+    --bg-color: #f6f3eb;       /* Warm beige background */
+    --text-primary: #111111;   /* Near black for high contrast */
+    --text-secondary: #444444; /* Dark gray for secondary text */
+    --equation-color: #a73030; /* Deep red for the equation */
+}
+
+/* Forces the social icons to match the deep red equation in light mode */
+body.light-theme .social-icons svg {
+    fill: #a73030;
+}
+
+body.light-theme .social-icons a:hover svg {
+    fill: #000000;
+}
+
+/* Light mode adjustments for the dropdown menu overlay */
+body.light-theme .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- Theme Icon Swapping --- */
+.theme-icon {
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.theme-icon.active {
+    display: block;
+}
+
+body.light-theme {
+        --bg-color: #f6f3eb; 
+        --text-primary: #111111; 
+        --text-secondary: #444444; 
+        --equation-color: #a73030; 
+    }
+
+    /* Target the SVG lines in the header when in light mode */
+    body.light-theme .nav-icons svg,
+    body.light-theme .dropdown-arrow,
+    body.light-theme .mobile-menu-toggle svg {
+        fill: #111111; /* Dark text for icons */
+    }
+
+    body.light-theme #scrollToTop svg {
+        fill: #111111;
+        stroke: #111111;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Define the shared animation */
+@keyframes travelAlongPath {
+    0% { offset-distance: 0%; opacity: 0; }
+    5% { opacity: 1; } /* Fades in at start */
+    95% { opacity: 1; } /* Fades out at end */
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* Animate the Red Dot */
+#dot-a {
+    /* Paste the EXACT 'd' string from #helix-path-a here inside path() */
+    offset-path: path("M 0,110 L 0,110 L 5,116.79435011239748 L 10,123.51425990315435 L 15,130.08610463437157 L 20,136.43788179992703 L 25,142.5 L 30,148.20604139901076 L 35,153.4934894133258 L 40,158.30441365603062 L 45,162.5861046343716 L 50,166.2916512459885 L 55,169.38045474676906 L 60,171.818673559185 L 65,173.57959404769736 L 70,174.64392319893778 L 75,175 L 80,174.64392319893778 L 85,173.57959404769736 L 90,171.818673559185 L 95,169.38045474676906 L 100,166.29165124598853 L 105,162.5861046343716 L 110,158.30441365603065 L 115,153.4934894133258 L 120,148.20604139901076 L 125,142.5 L 130,136.43788179992703 L 135,130.0861046343716 L 140,123.51425990315435 L 145,116.79435011239747 L 150,110.00000000000001 L 155,103.20564988760255 L 160,96.48574009684563 L 165,89.91389536562845 L 170,83.56211820007302 L 175,77.50000000000003 L 180,71.79395860098926 L 185,66.50651058667421 L 190,61.69558634396937 L 195,57.41389536562842 L 200,53.7083487540115 L 205,50.61954525323094 L 210,48.18132644081502 L 215,46.42040595230263 L 220,45.35607680106223 L 225,45 L 230,45.35607680106223 L 235,46.42040595230264 L 240,48.18132644081501 L 245,50.61954525323091 L 250,53.70834875401149 L 255,57.413895365628406 L 260,61.69558634396935 L 265,66.50651058667418 L 270,71.79395860098923 L 275,77.50000000000003 L 280,83.56211820007299 L 285,89.9138953656284 L 290,96.48574009684566 L 295,103.20564988760248 L 300,109.99999999999999 L 305,116.79435011239744 L 310,123.5142599031543 L 315,130.08610463437157 L 320,136.43788179992703 L 325,142.5 L 330,148.2060413990107 L 335,153.4934894133258 L 340,158.3044136560306 L 345,162.58610463437162 L 350,166.2916512459885 L 355,169.38045474676903 L 360,171.818673559185 L 365,173.57959404769736 L 370,174.64392319893778 L 375,175 L 380,174.64392319893778 L 385,173.57959404769738 L 390,171.818673559185 L 395,169.38045474676903 L 400,166.29165124598853 L 405,162.5861046343716 L 410,158.30441365603062 L 415,153.49348941332582 L 420,148.20604139901076 L 425,142.50000000000009 L 430,136.43788179992697 L 435,130.0861046343716 L 440,123.51425990315445 L 445,116.79435011239754 L 450,110.00000000000003 L 455,103.2056498876025 L 460,96.4857400968457 L 465,89.91389536562843 L 470,83.56211820007297 L 475,77.49999999999996 L 480,71.79395860098927 L 485,66.50651058667421 L 490,61.695586343969495 L 495,57.41389536562836 L 500,53.70834875401148 L 505,50.61954525323097 L 510,48.18132644081503 L 515,46.42040595230265 L 520,45.356076801062244 L 525,45 L 530,45.356076801062216 L 535,46.42040595230262 L 540,48.181326440815006 L 545,50.6195452532309 L 550,53.70834875401151 L 555,57.4138953656284 L 560,61.69558634396938 L 565,66.50651058667417 L 570,71.79395860098921 L 575,77.5 L 580,83.56211820007303 L 585,89.91389536562839 L 590,96.48574009684553 L 595,103.20564988760245 L 600,109.99999999999997 L 605,116.79435011239748 L 610,123.51425990315428 L 615,130.08610463437165 L 620,136.4378817999269 L 625,142.49999999999994 L 630,148.20604139901073 L 635,153.4934894133258 L 640,158.30441365603065 L 645,162.5861046343715 L 650,166.29165124598853 L 655,169.38045474676903 L 660,171.81867355918493 L 665,173.57959404769736 L 670,174.64392319893778 L 675,175 L 680,174.64392319893778 L 685,173.57959404769738 L 690,171.81867355918496 L 695,169.38045474676906 L 700,166.29165124598856 L 705,162.58610463437154 L 710,158.3044136560307 L 715,153.49348941332585 L 720,148.2060413990108 L 725,142.5 L 730,136.43788179992697 L 735,130.08610463437174 L 740,123.51425990315435 L 745,116.79435011239755 L 750,110.00000000000004 L 755,103.20564988760253 L 760,96.4857400968456 L 765,89.91389536562856 L 770,83.56211820007309 L 775,77.50000000000007 L 780,71.79395860098928 L 785,66.50651058667422 L 790,61.69558634396935 L 795,57.41389536562851 L 800,53.708348754011546 L 805,50.61954525323088 L 810,48.18132644081503 L 815,46.42040595230268 L 820,45.35607680106223 L 825,45 L 830,45.356076801062216 L 835,46.420405952302616 L 840,48.181326440815006 L 845,50.61954525323094 L 850,53.70834875401139 L 855,57.413895365628456 L 860,61.695586343969445 L 865,66.50651058667415 L 870,71.79395860098921 L 875,77.5 L 880,83.5621182000728 L 885,89.91389536562826 L 890,96.48574009684552 L 895,103.20564988760243 L 900,109.99999999999996");
+    animation: travelAlongPath 6s linear infinite;
+}
+
+/* Animate the Yellow Dot */
+#dot-b {
+    /* Paste the EXACT 'd' string from #helix-path-b here inside path() */
+    offset-path: path("M 0,110 L 0,110.00000000000001 L 5,103.20564988760252 L 10,96.48574009684566 L 15,89.91389536562843 L 20,83.56211820007299 L 25,77.50000000000003 L 30,71.79395860098926 L 35,66.50651058667421 L 40,61.69558634396937 L 45,57.41389536562842 L 50,53.7083487540115 L 55,50.61954525323097 L 60,48.18132644081502 L 65,46.42040595230264 L 70,45.35607680106223 L 75,45 L 80,45.35607680106223 L 85,46.42040595230262 L 90,48.18132644081501 L 95,50.61954525323095 L 100,53.70834875401146 L 105,57.413895365628406 L 110,61.69558634396935 L 115,66.50651058667418 L 120,71.79395860098923 L 125,77.50000000000003 L 130,83.56211820007294 L 135,89.9138953656284 L 140,96.48574009684566 L 145,103.20564988760253 L 150,109.99999999999999 L 155,116.79435011239744 L 160,123.51425990315435 L 165,130.08610463437157 L 170,136.43788179992697 L 175,142.49999999999994 L 180,148.20604139901073 L 185,153.4934894133258 L 190,158.30441365603062 L 195,162.58610463437157 L 200,166.2916512459885 L 205,169.38045474676906 L 210,171.818673559185 L 215,173.57959404769736 L 220,174.64392319893778 L 225,175 L 230,174.64392319893778 L 235,173.57959404769738 L 240,171.818673559185 L 245,169.3804547467691 L 250,166.29165124598848 L 255,162.5861046343716 L 260,158.3044136560307 L 265,153.49348941332582 L 270,148.20604139901076 L 275,142.5 L 280,136.43788179992697 L 285,130.0861046343716 L 290,123.51425990315434 L 295,116.79435011239754 L 300,110.00000000000003 L 305,103.2056498876025 L 310,96.4857400968457 L 315,89.91389536562843 L 320,83.56211820007297 L 325,77.50000000000006 L 330,71.79395860098927 L 335,66.50651058667421 L 340,61.69558634396942 L 345,57.41389536562836 L 350,53.70834875401154 L 355,50.61954525323097 L 360,48.18132644081503 L 365,46.42040595230263 L 370,45.35607680106223 L 375,45 L 380,45.35607680106223 L 385,46.42040595230262 L 390,48.181326440815006 L 395,50.619545253230946 L 400,53.70834875401145 L 405,57.4138953656284 L 410,61.69558634396938 L 415,66.50651058667417 L 420,71.79395860098921 L 425,77.49999999999991 L 430,83.56211820007303 L 435,89.91389536562839 L 440,96.48574009684553 L 445,103.20564988760245 L 450,109.99999999999997 L 455,116.79435011239748 L 460,123.51425990315428 L 465,130.08610463437157 L 470,136.43788179992703 L 475,142.50000000000003 L 480,148.20604139901073 L 485,153.4934894133258 L 490,158.3044136560305 L 495,162.58610463437162 L 500,166.29165124598853 L 505,169.38045474676903 L 510,171.81867355918496 L 515,173.57959404769736 L 520,174.64392319893776 L 525,175 L 530,174.64392319893778 L 535,173.57959404769738 L 540,171.818673559185 L 545,169.3804547467691 L 550,166.2916512459885 L 555,162.58610463437162 L 560,158.30441365603062 L 565,153.49348941332585 L 570,148.2060413990108 L 575,142.5 L 580,136.43788179992697 L 585,130.08610463437162 L 590,123.51425990315447 L 595,116.79435011239755 L 600,110.00000000000004 L 605,103.20564988760253 L 610,96.48574009684572 L 615,89.91389536562835 L 620,83.56211820007309 L 625,77.50000000000007 L 630,71.79395860098928 L 635,66.50651058667422 L 640,61.69558634396935 L 645,57.41389536562851 L 650,53.70834875401143 L 655,50.619545253230974 L 660,48.1813264408151 L 665,46.42040595230264 L 670,45.35607680106223 L 675,45 L 680,45.356076801062216 L 685,46.420405952302616 L 690,48.181326440815006 L 695,50.61954525323094 L 700,53.7083487540115 L 705,57.413895365628456 L 710,61.695586343969296 L 715,66.50651058667415 L 720,71.79395860098921 L 725,77.5 L 730,83.56211820007302 L 735,89.91389536562826 L 740,96.48574009684552 L 745,103.20564988760243 L 750,109.99999999999996 L 755,116.79435011239747 L 760,123.51425990315438 L 765,130.08610463437142 L 770,136.4378817999269 L 775,142.49999999999991 L 780,148.2060413990107 L 785,153.4934894133258 L 790,158.30441365603065 L 795,162.58610463437148 L 800,166.29165124598845 L 805,169.38045474676912 L 810,171.81867355918496 L 815,173.57959404769733 L 820,174.64392319893778 L 825,175 L 830,174.64392319893778 L 835,173.57959404769738 L 840,171.81867355918502 L 845,169.38045474676906 L 850,166.29165124598862 L 855,162.58610463437157 L 860,158.30441365603056 L 865,153.49348941332585 L 870,148.20604139901081 L 875,142.5 L 880,136.4378817999272 L 885,130.08610463437174 L 890,123.51425990315448 L 895,116.79435011239757 L 900,110.00000000000006");
+    animation: travelAlongPath 6s linear infinite;
+}
+
+
+
+
+
+
+
+
