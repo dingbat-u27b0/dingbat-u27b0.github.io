@@ -1,0 +1,20 @@
+[
+    {
+        "title": "An Introduction to Formal Type Systems",
+        "date": "2026-04-12",
+        "thumb_dark": "assets/thumb1_dark.png",
+        "thumb_light": "assets/thumb1_light.png",
+        "file": "blog/an-introduction-to-type-systems.md"
+    },
+
+    {
+        "title": "Gauge Invariance and the Geometry of Physics",
+        "date": "2026-03-28",
+        "file": "blog/gauge-invariance.md"
+    }
+]
+
+
+
+
+
