@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Aravind Bramhajosyula</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <site-header></site-header>
+
+    <article class="article-container">
+        <header class="article-header">
+            <h1 class="article-title" id="post-title">On the Pleasure of Abstraction</h1>
+            <div class="meta" id="post-meta">
+                <span>20 April 2026</span> <span class="dot-separator">•</span>
+                <span>406 words</span> <span class="dot-separator">•</span>
+                <span>2 mins</span>
+            </div>
+
+            <div class="article-author-block">
+                <img src="assets/newton_apple.png" alt="Aravind Bramhajosyula" class="author-avatar">
+                <div class="author-info">
+                    <span class="author-label">AUTHOR</span>
+                    <div class="author-name">Aravind Bramhajosyula</div>
+                    <div class="social-icons author-socials">
+                        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L5.09 21.75H1.78l7.509-8.58L1.14 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.042 4.126H5.078z"/></svg></a>
+                        <a href="#" aria-label="Bluesky"><svg viewBox="0 0 512 512"><path d="M256 232.562c-21.183-41.196-78.868-117.97-132.503-155.834-51.378-36.272-70.978-29.987-83.828-24.181-14.872 6.72-17.577 29.554-17.577 42.988.0 13.433 7.365 110.138 12.169 126.281 15.873 53.336 72.376 71.358 124.413 65.574 2.66-.395 5.357-.759 8.089-1.097-2.68.429-5.379.796-8.089 1.097-76.259 11.294-143.984 39.085-55.158 137.972C201.224 526.527 237.424 403.67 256 341.379c18.576 62.291 39.972 180.718 150.734 83.983 83.174-83.983 22.851-126.674-53.408-137.969-2.71-.302-5.409-.667-8.089-1.096 2.732.337 5.429.702 8.089 1.096 52.037 5.785 108.54-12.239 124.413-65.574 4.804-16.142 12.169-112.847 12.169-126.281.0-13.434-2.705-36.267-17.577-42.988-12.85-5.806-32.45-12.09-83.829 24.181C334.868 114.595 277.183 191.366 256 232.562z"></path></svg></a>
+                        <a href="#" aria-label="Mastodon"><svg viewBox="0 0 448 512"><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48.0.0.0-63.72 28.5-63.72 125.7.0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54.0 01-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"></path></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H6.477v-7.391H9V17zm-1.26-8.384h-.016c-.843 0-1.388-.581-1.388-1.306 0-.737.56-1.305 1.419-1.305.86 0 1.389.568 1.405 1.305 0 .725-.545 1.306-1.42 1.306zm11.26 8.384h-2.523v-3.955c0-.993-.355-1.668-1.241-1.668-.679 0-1.084.457-1.262.898-.066.16-.083.385-.083.61v4.115H11.37s.033-6.698 0-7.39h2.523v1.047c.336-.518.937-1.255 2.274-1.255 1.66 0 2.906 1.084 2.906 3.414V17z"/></svg></a>
+                        <a href="#" aria-label="Goodreads"><svg viewBox="0 0 448 512"><path d="M299.9 191.2c5.1 37.3-4.7 79-35.9 100.7-22.3 15.5-52.8 14.1-70.8 5.7-37.1-17.3-49.5-58.6-46.8-97.2 4.3-60.9 40.9-87.9 75.3-87.5 46.9-.2 71.8 31.8 78.2 78.3zM448 88v336c0 30.9-25.1 56-56 56H56c-30.9.0-56-25.1-56-56V88c0-30.9 25.1-56 56-56h336c30.9.0 56 25.1 56 56zM330 313.2s-.1-34-.1-217.3h-29v40.3c-.8.3-1.2-.5-1.6-1.2-9.6-20.7-35.9-46.3-76-46-51.9.4-87.2 31.2-100.6 77.8-4.3 14.9-5.8 30.1-5.5 45.6 1.7 77.9 45.1 117.8 112.4 115.2 28.9-1.1 54.5-17 69-45.2.5-1 1.1-1.9 1.7-2.9.2.1.4.1.6.2.3 3.8.2 30.7.1 34.5-.2 14.8-2 29.5-7.2 43.5-7.8 21-22.3 34.7-44.5 39.5-17.8 3.9-35.6 3.8-53.2-1.2-21.5-6.1-36.5-19-41.1-41.8-.3-1.6-1.3-1.3-2.3-1.3h-26.8c.8 10.6 3.2 20.3 8.5 29.2 24.2 40.5 82.7 48.5 128.2 37.4 49.9-12.3 67.3-54.9 67.4-106.3z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <article id="markdown-content" class="markdown-body">
+            <p>Loading content...</p>
+        </article>
+
+        <nav class="article-navigation">
+            <a href="#" class="nav-link prev-link" id="prev-article">
+                <span class="nav-arrow">&larr;</span>
+                <div class="nav-text-block">
+                    <span class="nav-title">Language All the Way Down</span>
+                    <span class="nav-date">28 February 2026</span>
+                </div>
+            </a>
+            
+            <a href="#" class="nav-link next-link" id="next-article" style="display: none;">
+                <div class="nav-text-block text-right">
+                    <span class="nav-title">Next Article Title</span>
+                    <span class="nav-date">Upcoming</span>
+                </div>
+                <span class="nav-arrow">&rarr;</span>
+            </a>
+        </nav>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <site-footer></site-footer>
+
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const mdFile = urlParams.get('file');
+
+            if (!mdFile) {
+                document.getElementById('markdown-content').innerHTML = `<p>No article specified in URL.</p>`;
+                return;
+            }
+
+            try {
+                // 1. Fetch and render the markdown content
+                const mdResponse = await fetch(mdFile);
+                if (!mdResponse.ok) throw new Error("File not found");
+                const text = await mdResponse.text();
+                
+                // Calculate actual word count and read time
+                const wordCount = text.trim().split(/\s+/).length;
+                const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+                // Render markdown
+                document.getElementById('markdown-content').innerHTML = marked.parse(text);
+
+                // 2. Fetch the index.json to update Title, Meta, and Navigation
+                // This dynamically finds the correct folder (e.g., 'blog') from the file path
+                const folderIndex = mdFile.lastIndexOf('/');
+                const folderPath = folderIndex !== -1 ? mdFile.substring(0, folderIndex) : '';
+                const indexUrl = folderPath ? `${folderPath}/index.json` : 'index.json';
+                
+                const indexResponse = await fetch(indexUrl);
+                if (indexResponse.ok) {
+                    let posts = await indexResponse.json();
+                    
+                    // Ensure the JSON is sorted newest-to-oldest for navigation logic
+                    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                    // Find where the current article sits in the timeline
+                    const currentIndex = posts.findIndex(p => p.file === mdFile);
+
+                    if (currentIndex !== -1) {
+                        const currentPost = posts[currentIndex];
+                        const dateObj = new Date(currentPost.date);
+                        const formattedDate = dateObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+                        // Update Page Title and Document Title
+                        document.getElementById('post-title').textContent = currentPost.title;
+                        document.title = `${currentPost.title} - Aravind Bramhajosyula`;
+
+                        // Inject the dynamically calculated Meta stats
+                        document.getElementById('post-meta').innerHTML = `
+                            <span>${formattedDate}</span> <span class="dot-separator">•</span>
+                            <span>${wordCount} words</span> <span class="dot-separator">•</span>
+                            <span>${readTime} mins</span>
+                        `;
+
+                        // 3. Wire up the Navigation Buttons
+                        const prevNav = document.getElementById('prev-article');
+                        const nextNav = document.getElementById('next-article');
+
+                        // Previous Article (Older -> further down the array)
+                        if (currentIndex < posts.length - 1) {
+                            const prevPost = posts[currentIndex + 1];
+                            prevNav.style.display = 'flex';
+                            prevNav.href = `article.html?file=${prevPost.file}`;
+                            prevNav.querySelector('.nav-title').textContent = prevPost.title;
+                            prevNav.querySelector('.nav-date').textContent = new Date(prevPost.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                        } else {
+                            prevNav.style.display = 'none'; // Hide if there is no older article
+                        }
+
+                        // Next Article (Newer -> further up the array)
+                        if (currentIndex > 0) {
+                            const nextPost = posts[currentIndex - 1];
+                            nextNav.style.display = 'flex';
+                            nextNav.href = `article.html?file=${nextPost.file}`;
+                            nextNav.querySelector('.nav-title').textContent = nextPost.title;
+                            nextNav.querySelector('.nav-date').textContent = new Date(nextPost.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                        } else {
+                            nextNav.style.display = 'none'; // Hide if this is the most recent article
+                        }
+                    }
+                }
+            } catch (error) {
+                document.getElementById('markdown-content').innerHTML = `<p>Error loading article: ${error.message}</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

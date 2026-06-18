@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews - Aravind Bramhajosyula</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="blog-archive-container">
+
+        <h1 class="page-title">Book Reviews</h1>
+
+        <div id="dynamic-archive-content">
+            <p style="color: var(--text-secondary);">Loading articles...</p>
+        </div>
+        
+    </main>
+
+
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadArchive('blog/index.json', 'dynamic-archive-content');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
